@@ -1,0 +1,556 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "df50524d-4cce-4d50-97f9-64142ed6eaef",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\"\"\"\n",
+    "Catherine Scire\n",
+    "DAB June 2025\n",
+    "Python Workshop HW\n",
+    "\"\"\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "6018dbe9-7e4a-4fe7-a1ea-ab04bda6371c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0 is zero\n"
+     ]
+    }
+   ],
+   "source": [
+    "## Part 1: Conditional Statements\n",
+    "### Basic if statement\n",
+    "# Let's check if a number is positive, negative, or zero\n",
+    "\n",
+    "number = 0\n",
+    "if number > 0:\n",
+    "    print (str(number) + ' is positive')\n",
+    "elif number < 0:\n",
+    "    print (str(number) + ' is negative')\n",
+    "else:\n",
+    "    print (str(number) + \" is zero\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "368a68b9-4d3d-463e-b622-917f63c4fdbe",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "### Exercise 2: Discount Calculator\n",
+    "# Write a function that calculates the final price after applying a discount\n",
+    "# If the purchase amount is $100 or more, apply a 10% discount\n",
+    "# If the purchase amount is $500 or more, apply a 20% discount\n",
+    "# If the purchase amount is $1000 or more, apply a 30% discount\n",
+    "\n",
+    "\n",
+    "def calculate_price(initial_price): \n",
+    "    if initial_price >= 1000:\n",
+    "        the_discount = 0.3\n",
+    "    elif initial_price >= 500:\n",
+    "        the_discount = 0.2\n",
+    "    elif initial_price >= 100:\n",
+    "        the_discount = 0.1\n",
+    "    else:\n",
+    "        the_discount = 0\n",
+    "\n",
+    "    final_price = (initial_price - (initial_price * the_discount))\n",
+    "    return final_price\n",
+    "\n",
+    "print(calculate_price(700))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f61aa67f-6378-4971-b151-6c1167353835",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "### Exercise 1: Grade Calculator\n",
+    "# Write a program that converts a numerical score to a letter grade\n",
+    "# 90-100: A\n",
+    "# 80-89: B\n",
+    "# 70-79: C\n",
+    "# 60-69: D\n",
+    "# Below 60: F\n",
+    "\n",
+    "def get_grades(grade):\n",
+    "    if grade >= 90:\n",
+    "        print(\"A\")\n",
+    "    elif grade >= 80:\n",
+    "        print(\"B\")\n",
+    "    elif grade >= 70:\n",
+    "        print (\"C\")\n",
+    "    elif grade >= 60:\n",
+    "        print(\"D\")\n",
+    "    else:\n",
+    "        print(\"F\")\n",
+    "\n",
+    "get_grades(80)       "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6b90f225-099a-4fbe-b302-d251773ee3de",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "## Part 2: Functions\n",
+    "### Basic function definition\n",
+    "def greet_person(name):\n",
+    "    return(\"Hello, \" + (name) + \"!\")\n",
+    "\n",
+    "# Call the function\n",
+    "# this is a love island usa ship lol\n",
+    "print(greet_person(\"Nicolandria\"))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "940ea358-de56-4fde-93bd-c0e4e53c749b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "### Exercise 3: Temperature Converter\n",
+    "# Write a function that converts temperature from Celsius to Fahrenheit\n",
+    "# Formula: F = C * 9/5 + 32\n",
+    "\n",
+    "def celsius_to_fahrenheit(celsius):\n",
+    "    fahrenheit = celsius * 9/5 + 32\n",
+    "    return fahrenheit\n",
+    "\n",
+    "# Test your function\n",
+    "celsius_to_fahrenheit(90)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d3eeba32-169b-4c9d-b33e-ed3ce23d1b4c",
+   "metadata": {
+    "jupyter": {
+     "source_hidden": true
+    }
+   },
+   "outputs": [],
+   "source": [
+    "### Exercise 4: Calculator Function\n",
+    "# Write a function that takes two numbers and an operation as parameters\n",
+    "# Supported operations: add, subtract, multiply, divide\n",
+    "# Return the result of the operation\n",
+    "# = assigns to, == makes equal to\n",
+    "\n",
+    "def calculator(first_value, second_value, operator):\n",
+    "    if operator == \"add\":\n",
+    "        return first_value + second_value\n",
+    "    elif operator == \"subtract\":\n",
+    "        return first_value - second_value\n",
+    "    elif operator == \"multiply\":\n",
+    "        return first_value * second_value\n",
+    "    elif operator == \"divide\":\n",
+    "        if second_value == 0:\n",
+    "            return \"Cannot divide by 0, try again with different denominator\"\n",
+    "        return first_value / second_value\n",
+    "    else:\n",
+    "        return \"Oops something's up\"\n",
+    "\n",
+    "# Test your function\n",
+    "print(calculator(3, 3, \"add\"))      \n",
+    "print(calculator(33, 3, \"subtract\")) \n",
+    "print(calculator(3, 3, \"multiply\")) \n",
+    "print(calculator(3, 3, \"divide\"))  \n",
+    "print(calculator(3, 0, \"divide\"))  "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f63d43f5-421b-41bc-a16d-5a967143f7b2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "## Part 3: Lists\n",
+    "### Basic list operations\n",
+    "colors = [\"red\", \"orange\", \"yellow\", \"green\"]\n",
+    "\n",
+    "# Accessing elements\n",
+    "#First color\n",
+    "print(colors[0])\n",
+    "\n",
+    "# Modifying the list\n",
+    "colors[1] = \"blood orange\"\n",
+    "\n",
+    "# Adding elements\n",
+    "colors.append(\"blue\")\n",
+    "\n",
+    "# Removing elements\n",
+    "colors.pop(0)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "90554bad-601d-4f23-913b-b79424e24070",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "### Exercise 5: List Statistics\n",
+    "# Write a function that takes a list of numbers and returns a dictionary with:\n",
+    "# - The minimum value\n",
+    "# - The maximum value\n",
+    "# - The average value\n",
+    "# - The sum of all values\n",
+    "#Len() tells you how many objects in group--- got from internet, was not in slides\n",
+    "\n",
+    "def calculate(numbers):\n",
+    "    if not numbers:\n",
+    "        return {\n",
+    "            \"min\": None,\n",
+    "            \"max\": None,\n",
+    "            \"average\": None,\n",
+    "            \"sum\": None\n",
+    "        }\n",
+    "    return {\n",
+    "        \"min\": min(numbers),\n",
+    "        \"max\": max(numbers),\n",
+    "        \"average\": sum(numbers) / len(numbers),\n",
+    "        \"sum\": sum(numbers)\n",
+    "    }\n",
+    "\n",
+    "# Test your function\n",
+    "numbers = [1, 22, 333, 4444, 55555]\n",
+    "stats = calculate(numbers)\n",
+    "print(stats)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "08b3cc65-99c3-4f14-8c0f-7a0671aee450",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[2, 4, 6, 8, 10]\n"
+     ]
+    }
+   ],
+   "source": [
+    "### Exercise 6: List Filtering\n",
+    "# Write a function that takes a list of numbers and returns a new list containing only even numbers\n",
+    "\n",
+    "def filter_even_numbers(numbers):\n",
+    "    return [num for num in numbers if num % 2 == 0]\n",
+    " \n",
+    "# Test your function\n",
+    "numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n",
+    "print(filter_even_numbers(numbers))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1001c653-da3d-4ff9-80c3-67ceeef662df",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "## Part 4: Dictionaries\n",
+    "### Basic dictionary operations\n",
+    "personal_info = {\n",
+    "    \"name\": \"Catherine\",\n",
+    "    \"fav color\": \"blue\",\n",
+    "    \"age\": 24,\n",
+    "    \"fav sweet treat\": \"chocolate chip cookies\"}\n",
+    "\n",
+    "# Accessing values\n",
+    "print(personal_info[\"name\"])\n",
+    "\n",
+    "# Adding or modifying key-value pairs\n",
+    "personal_info[\"eye color\"] = \"green\"\n",
+    "\n",
+    "# Removing key-value pairs\n",
+    "personal_info.pop(\"fav color\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "da843b65-3a60-43de-ad88-6e3f0e2242ef",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "### Exercise 7: Word Counter\n",
+    "# Write a function that takes a string and returns a dictionary with each word as a key\n",
+    "# and the number of occurrences as the value\n",
+    "\n",
+    "\"\"\"I honestly have no idea how to apporach this my initial thought revovles around using the str() function since it convers whatever is isnide to a readable string\"\"\"\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ff355ee2-438c-4522-858a-c8d6fb18faa7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "### Exercise 8: Contact Manager\n",
+    "# Create a small contact manager that lets you add, update, and retrieve contact information\n",
+    "\n",
+    "contact_manager = {}\n",
+    "\n",
+    "def add_contact(name=None, phone_number=None, email=None):\n",
+    "    contact_manager[\"name\"] = {\"name\": name, \"phone number\": phone_number, \"email\": email}\n",
+    "    return add_contact (name)\n",
+    "\n",
+    "def update_contact(name=None, phone_number=None, email=None): \n",
+    "    if name:\n",
+    "        contact_manager[\"name\"] = name\n",
+    "    if phone_number:\n",
+    "        contact_manager[\"name\"][\"phone number\"] = phone_number\n",
+    "    if email:\n",
+    "        contact_manager[\"name\"][\"email\"] = email\n",
+    "    \n",
+    "    return update_contact (name, phone_number, email)\n",
+    "\n",
+    "def get_contact(name):\n",
+    "    return contact_manager.get(name, phone_number, email)\n",
+    "\n",
+    "# Test your contact manager\n",
+    "print (add_contact(\"Edward\", \"123-456\", \"edward@thecullens.com\"))\n",
+    "print (add_contact(\"Jacob\", \"987-654\"))\n",
+    "print (get_contact(\"Jacob\"))\n",
+    "print (update_contact(\"Edward\", email=\"edward@gmail.com\"))\n",
+    "print (get_contact(\"Edward\"))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "39755bf4-e8ac-4bd3-918c-b5b5ea6f4fd0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "step 1\n",
+      "1\n",
+      "2\n",
+      "3\n",
+      "4\n",
+      "5\n",
+      "step 2\n",
+      "step 3\n",
+      "step 3\n",
+      "step 3\n",
+      "step 3\n"
+     ]
+    }
+   ],
+   "source": [
+    "## Part 5: Loops\n",
+    "#multiple print statements used to split up numbers\n",
+    "\n",
+    "#print(\"step 1\")\n",
+    "#For loop with a list\n",
+    "num_list =[1,2,3,4,5]\n",
+    "for x in num_list:\n",
+    "    print(x)\n",
+    "#print(\"step 2\")\n",
+    "#For loop with range\n",
+    "for x in range (1,5):\n",
+    "        #print(x)\n",
+    "\n",
+    "#print(\"step 3\")\n",
+    "#While loop\n",
+    "while x < 6:\n",
+    "    x += 1\n",
+    "#trying to divide up work but it keeps having errors with the print function in loops"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a8a6d1f7-3d9c-405a-abd5-05e58d086ec7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "### Exercise 9: Factorial Calculator\n",
+    "# Write a function that calculates the factorial of a number using a loop\n",
+    "# Factorial of n = n * (n-1) * (n-2) * ... * 1\n",
+    "\n",
+    "def factorial(x)\n",
+    "    n=n*(n-1)\n",
+    "    if x < 0\n",
+    "        print(\"Factorials cannot compute negative numbers\")\n",
+    "    for x in range (n+1):\n",
+    "        "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "dc0ca1b3-958f-457e-8d45-10fd97822c80",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'result' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mNameError\u001b[39m                                 Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[29]\u001b[39m\u001b[32m, line 20\u001b[39m\n\u001b[32m     18\u001b[39m     score = student_data[\u001b[33m\"\u001b[39m\u001b[33mscores\u001b[39m\u001b[33m\"\u001b[39m]\n\u001b[32m     19\u001b[39m     get_avg = \u001b[38;5;28msum\u001b[39m(score) /\u001b[38;5;28mlen\u001b[39m(score)\n\u001b[32m---> \u001b[39m\u001b[32m20\u001b[39m     \u001b[43mresult\u001b[49m[\u001b[33m\"\u001b[39m\u001b[33mname\u001b[39m\u001b[33m\"\u001b[39m] = get_avg\n\u001b[32m     23\u001b[39m \u001b[38;5;28mprint\u001b[39m(result[\u001b[33m\"\u001b[39m\u001b[33mJasper\u001b[39m\u001b[33m\"\u001b[39m])\n\u001b[32m     25\u001b[39m \u001b[38;5;28;01mif\u001b[39;00m get_avg > highest_avg:\n",
+      "\u001b[31mNameError\u001b[39m: name 'result' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "### Exercise 10: Data Analysis\n",
+    "# You're given a list of dictionaries, each representing a student's score on different tests.\n",
+    "# Calculate the average score for each student and identify the student with the highest average.\n",
+    "\n",
+    "student_data=[\n",
+    "    {\"name\":\"Edward\", \"scores\":[100,99,98,97]},\n",
+    "    {\"name\" :\"Bella\", \"scores\":[89,87,89,85]},\n",
+    "    {\"name\":\"Jasper\", \"scores\":[87,89,87,98]},\n",
+    "    {\"name\":\"Alice\", \"scores\":[98,87,99,98]} ]\n",
+    "\n",
+    "def analyze_score(student):\n",
+    "    result = {}\n",
+    "    highest_avg = None \n",
+    "    top_student = None\n",
+    "\n",
+    "for student_data in student_data:\n",
+    "    name = student_data[\"name\"]\n",
+    "    score = student_data[\"scores\"]\n",
+    "    get_avg = sum(score) /len(score)\n",
+    "    result[\"name\"] = get_avg\n",
+    "\n",
+    "\n",
+    "print(result[\"Jasper\"])\n",
+    "\n",
+    "if get_avg > highest_avg:\n",
+    "    print(student_data[\"name\"] + \", you're top student!\")\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "4c5798bb-b429-440d-93f3-e1c9d72ed3bd",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "'int' object is not iterable",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mTypeError\u001b[39m                                 Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[33]\u001b[39m\u001b[32m, line 17\u001b[39m\n\u001b[32m     15\u001b[39m     month = sales_data[\u001b[33m\"\u001b[39m\u001b[33mmonth\u001b[39m\u001b[33m\"\u001b[39m]\n\u001b[32m     16\u001b[39m     money = sales_data[\u001b[33m\"\u001b[39m\u001b[33msales amount\u001b[39m\u001b[33m\"\u001b[39m]\n\u001b[32m---> \u001b[39m\u001b[32m17\u001b[39m     total_sales = \u001b[38;5;28;43msum\u001b[39;49m\u001b[43m(\u001b[49m\u001b[43mmoney\u001b[49m\u001b[43m)\u001b[49m\n\u001b[32m     18\u001b[39m     result[\u001b[33m\"\u001b[39m\u001b[33mmonth\u001b[39m\u001b[33m\"\u001b[39m] = total_sales\n\u001b[32m     19\u001b[39m \u001b[38;5;28mprint\u001b[39m(result[\u001b[33m\"\u001b[39m\u001b[33mJuly\u001b[39m\u001b[33m\"\u001b[39m])\n",
+      "\u001b[31mTypeError\u001b[39m: 'int' object is not iterable"
+     ]
+    }
+   ],
+   "source": [
+    "## Final Challenge: Sales Data Analysis\n",
+    "\n",
+    "# You're given a list of dictionaries representing monthly sales data for a store.\n",
+    "# Each dictionary contains the month, category, and sales amount.\n",
+    "sales_data = [\n",
+    "    {\"month\": \"July\", \"category\": \"Ice cream\", \"sales amount\": 789},\n",
+    "    {\"month\":\"July\", \"category\": \"Baked Goods\", \"sales amount\": 678},\n",
+    "    {\"month\": \"August\", \"category\": \"Ice cream\", \"sales amount\" :888},\n",
+    "    {\"month\":\"August\", \"category\": \"Baked Goods\", \"sales amount\": 897}]\n",
+    "\n",
+    "# Calculate total sales per month\n",
+    "def calculate_monthly_sales(month):\n",
+    "    result = {}\n",
+    "for sales_data in sales_data:\n",
+    "    month = sales_data[\"month\"]\n",
+    "    money = sales_data[\"sales amount\"]\n",
+    "    total_sales = sum(money)\n",
+    "    result[\"month\"] = total_sales\n",
+    "print(result[\"July\"])\n",
+    "        \n",
+    "# Calculate total sales per category\n",
+    "def calculate_sales_category(category):\n",
+    "    result = {}\n",
+    "for sales_data in sales_data:\n",
+    "    category = sales_data[\"category\"]\n",
+    "    money1 = sales_data[\"sales amount\"]\n",
+    "    total_cat_sales = sum(money1)\n",
+    "    result[\"category\"] = total_cat_sales\n",
+    "print(result[\"Ice cream\"])\n",
+    "# Find best performing month and category\n",
+    "\n",
+    "# Calculate overall total sales\n",
+    "def calculate_overall_sales(total):\n",
+    "    result = {}\n",
+    "for sales_data in sales_data:\n",
+    "    money2 = sales_data[\"sales amount\"]\n",
+    "    #another for _ in _ needed??\n",
+    "    total_overall_sales = sum(money2)\n",
+    "    result[\"sales amount\"] = total_overall_sales\n",
+    "print(result[\"sales amount\"])\n",
+    "\n",
+    "# Test your analysis function"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "cadea060-94cf-4cc3-927a-382da59a97d8",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "47039ad4-f2ef-425c-a755-c0563bf23874",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
